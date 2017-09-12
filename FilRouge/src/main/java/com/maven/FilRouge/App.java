@@ -2,7 +2,6 @@ package com.maven.FilRouge;
 
 /**
  * Hello world!
- *
  */
 public class App 
 {
