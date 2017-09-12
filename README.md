@@ -1,1 +1,1 @@
-# Projet ProxyBanque - FilRouge by AM & AR :)
+# Projet ProxyBanque - FilRouge by AM & GP :)
