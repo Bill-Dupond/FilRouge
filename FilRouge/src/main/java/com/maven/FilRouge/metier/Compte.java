@@ -4,7 +4,7 @@ package com.maven.FilRouge.metier;
  * @author Alexandre
  *
  */
-public abstract class Compte {
+public class Compte {
 	private long numCompte;
 	private float solde;
 	private String dateOuverture;
