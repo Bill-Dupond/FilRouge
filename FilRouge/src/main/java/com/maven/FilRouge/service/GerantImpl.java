@@ -1,14 +1,13 @@
 package com.maven.FilRouge.service;
 
+import com.maven.FilRouge.dao.Dao;
+import com.maven.FilRouge.dao.Idao;
 import com.maven.FilRouge.metier.Agence;
 import com.maven.FilRouge.metier.Client;
 import com.maven.FilRouge.metier.Compte;
 import com.maven.FilRouge.metier.Conseiller;
 import com.maven.FilRouge.metier.Employe;
 import com.maven.FilRouge.metier.Gerant;
-
-import dao.Dao;
-import dao.Idao;
 /**
  * Classe regroupant les m�thodes utilisables par les g�rants
  * @author Alexandre

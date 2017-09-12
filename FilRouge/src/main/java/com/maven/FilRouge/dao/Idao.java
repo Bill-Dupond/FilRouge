@@ -1,4 +1,4 @@
-package dao;
+package com.maven.FilRouge.dao;
 
 import com.maven.FilRouge.metier.Agence;
 import com.maven.FilRouge.metier.Client;

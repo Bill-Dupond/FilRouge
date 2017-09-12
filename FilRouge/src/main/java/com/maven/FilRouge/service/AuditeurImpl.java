@@ -1,7 +1,7 @@
 package com.maven.FilRouge.service;
 
-import dao.Dao;
-import dao.Idao;
+import com.maven.FilRouge.dao.Dao;
+import com.maven.FilRouge.dao.Idao;
 /**
  * Classe regroupant les m�thodes utilisables par les auditeurs
  * @author Alexandre

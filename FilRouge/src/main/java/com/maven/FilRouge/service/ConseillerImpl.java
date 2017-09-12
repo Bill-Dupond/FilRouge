@@ -1,11 +1,10 @@
 package com.maven.FilRouge.service;
 
+import com.maven.FilRouge.dao.Dao;
+import com.maven.FilRouge.dao.Idao;
 import com.maven.FilRouge.metier.Client;
 import com.maven.FilRouge.metier.Compte;
 import com.maven.FilRouge.metier.Conseiller;
-
-import dao.Dao;
-import dao.Idao;
 /**
  * Classe regroupant les m�thodes utilisables par les conseillers
  * @author Alexandre
