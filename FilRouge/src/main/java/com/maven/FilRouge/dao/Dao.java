@@ -3,6 +3,9 @@ package com.maven.FilRouge.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 
 import com.maven.FilRouge.metier.Agence;
 import com.maven.FilRouge.metier.Client;
@@ -19,27 +22,9 @@ public class Dao implements Idao {
 
 	@Override
 	public void creerClient(Client c) {
-		try {
-            //  1-charger le pilote
-            Class.forName("com.mysql.jdbc.Driver");
-
-            // 2- adresse de la BDD
-            String adresse = "jdbc:mysql://localhost:8889/proxybanque";
-            String login = "root";
-            String mdp = "root";
-
-            // 3- Connection a la BDD
-            Connection con = DriverManager.getConnection(adresse, login, mdp);
-
-            
-
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-		
+		System.out.println("Je cree un client en BDD");
 	}
-
+	
 	@Override
 	public void lireClient(Client c) {
 		System.out.println("Je lis un client en BDD");		
@@ -57,12 +42,74 @@ public class Dao implements Idao {
 
 	@Override
 	public void creerCompte(Compte c) {
-		System.out.println("Je cr�e un compte en BDD");		
+			
+		try {
+            //  1-charger le pilote
+            Class.forName("com.mysql.jdbc.Driver");
+
+            // 2- adresse de la BDD
+            String adresse = "jdbc:mysql://localhost:8889/proxybanque";
+            String login = "root";
+            String mdp = "root";
+
+            // 3- Connection a la BDD
+            Connection con = DriverManager.getConnection(adresse, login, mdp);
+
+         // 4- Preparation et envoi de la requete
+            String requete = "INSERT INTO  compte (numCompte, solde, dateOuverture, decouvert, tauxEpargne) VALUES(?,?,?,?,?)";
+            PreparedStatement ps = con.prepareStatement(requete);
+            ps.setLong(1, c.getNumCompte());
+            ps.setFloat(2, c.getSolde());
+            ps.setString(3, c.getDateOuverture());
+            
+            ps.executeUpdate();
+
+            // 6- Liberation des ressources
+            ps.close();
+            con.close();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+		
+	
 	}
 
 	@Override
-	public void lireCompte(Compte c) {
-		System.out.println("Je lis un compte en BDD");		
+	public Compte lireCompte(Compte c) {
+		try {
+			//1- charger le pilote
+			Class.forName("com.mysql.jdbc.Driver");
+			//2- adresse de la base de donn�es
+			String adresse="jdbc:mysql://localhost:8889/proxybanque";
+			String login="root";
+			String mdp="root";
+			
+			//3- connection a la base 
+			Connection conn = DriverManager.getConnection(adresse, login, mdp);
+			//4- preparer en envoyer la requete 
+			String requete = "SELECT* FROM compte WHERE idCompte=? ";
+			
+			PreparedStatement ps = conn.prepareStatement(requete);
+			ps.setLong(1, c.getNumCompte());
+			
+			//5- recuperer le resultat
+			ResultSet rs = ps.executeQuery();
+			rs.next();
+			c.setNumCompte(rs.getLong("numCompte"));
+			c.setSolde(rs.getFloat("solde"));
+			c.setDateOuverture(rs.getString("dateOuverture"));
+
+			//6- liberer les ressources
+			ps.close();
+			conn.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		return c;	
 	}
 
 	@Override

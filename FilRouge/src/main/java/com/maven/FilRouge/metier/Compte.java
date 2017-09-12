@@ -11,6 +11,7 @@ public abstract class Compte {
 	private Client client;
 	private CB carte;
 	
+	
 	public CB getCarte() {
 		return carte;
 	}
@@ -32,7 +33,7 @@ public abstract class Compte {
 	public float getSolde() {
 		return solde;
 	}
-	public void setSolde(int solde) {
+	public void setSolde(Float solde) {
 		this.solde = solde;
 	}
 	public String getDateOuverture() {

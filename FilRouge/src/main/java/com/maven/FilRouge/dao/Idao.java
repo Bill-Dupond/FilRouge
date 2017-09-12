@@ -30,7 +30,7 @@ public interface Idao {
 	public void ajouterConseiller(Conseiller c, Gerant g);
 	
 	public void creerCompte(Compte c);
-	public void lireCompte(Compte c);
+	public Compte lireCompte(Compte c);
 	public void modifierCompte(Compte c);
 	public void supprimerCompte(Compte c);
 	public void faireVirement(Compte c);
