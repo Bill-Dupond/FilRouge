@@ -1,5 +1,9 @@
 package com.maven.FilRouge.dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
 import com.maven.FilRouge.metier.Agence;
 import com.maven.FilRouge.metier.Client;
 import com.maven.FilRouge.metier.Compte;
@@ -7,15 +11,33 @@ import com.maven.FilRouge.metier.Conseiller;
 import com.maven.FilRouge.metier.Employe;
 import com.maven.FilRouge.metier.Gerant;
 /**
- * Classe qui dialogue avec la BDD
- * @author Alexandre
+ * 
+ * @author 
  *
  */
 public class Dao implements Idao {
 
 	@Override
-	public void creerClient() {
-		System.out.println("Je cr�e un client en BDD");		
+	public void creerClient(Client c) {
+		try {
+            //  1-charger le pilote
+            Class.forName("com.mysql.jdbc.Driver");
+
+            // 2- adresse de la BDD
+            String adresse = "jdbc:mysql://localhost:8889/proxybanque";
+            String login = "root";
+            String mdp = "root";
+
+            // 3- Connection a la BDD
+            Connection con = DriverManager.getConnection(adresse, login, mdp);
+
+            
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+		
 	}
 
 	@Override
@@ -34,7 +56,7 @@ public class Dao implements Idao {
 	}
 
 	@Override
-	public void creerCompte() {
+	public void creerCompte(Compte c) {
 		System.out.println("Je cr�e un compte en BDD");		
 	}
 
@@ -79,7 +101,7 @@ public class Dao implements Idao {
 	}
 
 	@Override
-	public void creerConseiller() {
+	public void creerConseiller(Conseiller c) {
 		System.out.println("Je cr�e un conseiller en BDD");	
 	}
 

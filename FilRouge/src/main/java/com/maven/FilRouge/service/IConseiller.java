@@ -12,12 +12,12 @@ public interface IConseiller {
 
 	public void seconnecter(String login, String mdp);	
 	
-	public void creerClient();
+	public void creerClient(Client c);
 	public void lireClient(Client c);
 	public void modifierClient(Client c);
 	public void supprimerClient(Client c);
 	
-	public void creerCompte();
+	public void creerCompte(Compte c);
 	public void lireCompte(Compte c);
 	public void modifierCompte(Compte c);
 	public void supprimerCompte(Compte c);

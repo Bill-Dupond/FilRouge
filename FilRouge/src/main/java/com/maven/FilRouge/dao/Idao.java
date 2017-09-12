@@ -15,12 +15,12 @@ public interface Idao {
 
 	public void seconnecter(String login, String mdp);
 
-	public void creerClient();
+	public void creerClient(Client c);
 	public void lireClient(Client c);
 	public void modifierClient(Client c);
 	public void supprimerClient(Client c);
 	
-	public void creerConseiller();
+	public void creerConseiller(Conseiller c);
 	public void lireConseiller(Conseiller c);
 	public void modifierConseiller(Conseiller c);
 	public void supprimerConseiller(Conseiller c);
@@ -29,7 +29,7 @@ public interface Idao {
 	public void attribuerGerant(Gerant g, Conseiller c);
 	public void ajouterConseiller(Conseiller c, Gerant g);
 	
-	public void creerCompte();
+	public void creerCompte(Compte c);
 	public void lireCompte(Compte c);
 	public void modifierCompte(Compte c);
 	public void supprimerCompte(Compte c);

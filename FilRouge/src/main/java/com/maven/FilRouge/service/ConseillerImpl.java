@@ -26,8 +26,8 @@ public class ConseillerImpl implements IConseiller {
 	 * M�thode permettant � un conseiller de cr�er un nouveau client
 	 */
 	@Override
-	public void creerClient() {
-		dao.creerClient();		
+	public void creerClient(Client c) {
+		dao.creerClient(c);		
 	}
 
 	/**
@@ -58,8 +58,8 @@ public class ConseillerImpl implements IConseiller {
 	 * M�thode permettant � un conseiller de cr�er un compte bancaire
 	 */
 	@Override
-	public void creerCompte() {
-		dao.creerCompte();			
+	public void creerCompte(Compte c) {
+		dao.creerCompte(c);			
 	}
 
 	/**

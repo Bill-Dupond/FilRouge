@@ -21,8 +21,8 @@ public class GerantImpl implements IGerant {
 	 * M�thode permettant � un g�rant de cr�er un client
 	 */
 	@Override
-	public void creerClient() {
-		dao.creerClient();		
+	public void creerClient(Client c) {
+		dao.creerClient(c);		
 	}
 
 	/**
@@ -53,8 +53,8 @@ public class GerantImpl implements IGerant {
 	 * M�thode permettant � un ferant de cr�er un compte bancaire
 	 */
 	@Override
-	public void creerCompte() {
-		dao.creerCompte();		
+	public void creerCompte(Compte c) {
+		dao.creerCompte(c);		
 	}
 
 	/**
@@ -117,8 +117,8 @@ public class GerantImpl implements IGerant {
 	 * M�thode permettant � un g�rant de cr�er un conseiller
 	 */
 	@Override
-	public void creerConseiller() {
-		dao.creerConseiller();		
+	public void creerConseiller(Conseiller c) {
+		dao.creerConseiller(c);		
 	}
 
 	/**
