@@ -18,7 +18,7 @@ public interface IConseiller {
 	public void supprimerClient(Client c);
 	
 	public void creerCompte(Compte c);
-	public void lireCompte(Compte c);
+	public Compte lireCompte(Compte c);
 	public void modifierCompte(Compte c);
 	public void supprimerCompte(Compte c);
 	public void faireVirement(Compte c);

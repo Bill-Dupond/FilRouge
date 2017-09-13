@@ -66,8 +66,9 @@ public class ConseillerImpl implements IConseiller {
 	 * M�thode permettant � un conseiller de lire les caract�ristiques d'un compte bancaire
 	 */
 	@Override
-	public void lireCompte(Compte c) {
-		dao.lireCompte(c);			
+	public Compte lireCompte(Compte c) {
+		
+		return dao.lireCompte(c);
 	}
 
 	/**

@@ -113,8 +113,21 @@ public class Dao implements Idao {
 	}
 
 	@Override
-	public void modifierCompte(Compte c) {
-		System.out.println("Je modifie un compte en BDD");	
+	public void modifierCompte(int idCompte, float solde) {
+		
+		//1- charger le pilote
+		Class.forName("com.mysql.jdbc.Driver");
+		//2- adresse de la base de donn�es
+		String adresse="jdbc:mysql://localhost:8889/proxybanque";
+		String login="root";
+		String mdp="root";
+		
+		//3- connection a la base 
+		Connection conn = DriverManager.getConnection(adresse, login, mdp);
+		//4- preparer en envoyer la requete 
+		String requete = "SELECT* FROM compte WHERE idCompte=? ";
+		
+		PreparedStatement ps = conn.prepareStatement(requete);	
 	}
 
 	@Override
