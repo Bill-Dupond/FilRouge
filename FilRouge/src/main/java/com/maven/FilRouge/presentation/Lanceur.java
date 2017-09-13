@@ -1,5 +1,6 @@
 package com.maven.FilRouge.presentation;
 
+import com.maven.FilRouge.metier.Compte;
 import com.maven.FilRouge.service.AuditeurImpl;
 import com.maven.FilRouge.service.ConseillerImpl;
 import com.maven.FilRouge.service.GerantImpl;
@@ -14,6 +15,10 @@ public class Lanceur {
 		IAuditeur ia = new AuditeurImpl();
 		IConseiller ic = new ConseillerImpl();
 		IGerant ig = new GerantImpl();
+		
+		Compte c = new Compte();
+		c.setNumCompte(234234);
+		c.setDateOuverture(12/12/12);
 		
 		/*Fenetre f = new Fenetre();
 		f.setVisible(true);*/

@@ -115,6 +115,7 @@ public class Dao implements Idao {
 	@Override
 	public void modifierCompte(int idCompte, float solde) {
 		
+		try {
 		//1- charger le pilote
 		Class.forName("com.mysql.jdbc.Driver");
 		//2- adresse de la base de donn�es
@@ -125,14 +126,52 @@ public class Dao implements Idao {
 		//3- connection a la base 
 		Connection conn = DriverManager.getConnection(adresse, login, mdp);
 		//4- preparer en envoyer la requete 
-		String requete = "SELECT* FROM compte WHERE idCompte=? ";
+		String requete = "UPDATE compte set solde=? WHERE idCompte=? ";
 		
-		PreparedStatement ps = conn.prepareStatement(requete);	
+		PreparedStatement ps = conn.prepareStatement(requete);
+		
+		ps.setFloat(1, solde);
+		ps.setInt(2, idCompte);
+		ps.executeUpdate();
+		
+		ps.close();
+		conn.close();
+		
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+			}
+	
 	}
 
 	@Override
 	public void supprimerCompte(Compte c) {
-		System.out.println("Je supprime un compte en BDD");	
+		try {
+			//1- charger le pilote
+			Class.forName("com.mysql.jdbc.Driver");
+			//2- adresse de la base de donn�es
+			String adresse="jdbc:mysql://localhost:8889/proxybanque";
+			String login="root";
+			String mdp="root";
+			
+			//3- connection a la base 
+			Connection conn = DriverManager.getConnection(adresse, login, mdp);
+			//4- preparer en envoyer la requete 
+			String requete = "DELETE FROM compte Where idCompte=?";
+			
+			PreparedStatement ps = conn.prepareStatement(requete);
+			
+			ps.setFloat(1, c.getIdCompte());
+	
+			ps.executeUpdate();
+			
+			ps.close();
+			conn.close();
+			
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				}
 	}
 
 	@Override

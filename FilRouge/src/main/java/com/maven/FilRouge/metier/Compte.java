@@ -5,6 +5,8 @@ package com.maven.FilRouge.metier;
  *
  */
 public class Compte {
+	private int idCompte;
+	
 	private long numCompte;
 	private float solde;
 	private String dateOuverture;
@@ -41,6 +43,12 @@ public class Compte {
 	}
 	public void setDateOuverture(String dateOuverture) {
 		this.dateOuverture = dateOuverture;
+	}
+	public int getIdCompte() {
+		return idCompte;
+	}
+	public void setIdCompte(int idCompte) {
+		this.idCompte = idCompte;
 	}
 	
 }
