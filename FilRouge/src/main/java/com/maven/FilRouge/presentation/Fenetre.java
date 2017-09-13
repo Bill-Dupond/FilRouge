@@ -241,9 +241,9 @@ public class Fenetre extends JFrame {
 			//Ajout des onglets du compte
 		JTabbedPane ongletgestioncompte = new JTabbedPane();
 		ongletgestioncompte.addTab("Créer Compte", ongletcreercompte);
-		ongletgestioncompte.addTab("Créer Compte", ongletlirecompte);
+		ongletgestioncompte.addTab("Lire Compte", ongletlirecompte);
 		ongletgestioncompte.addTab("Modifier Compte", ongletmodifiercompte);
-		ongletgestioncompte.addTab("Modifier Compte", ongletsupprimercompte);
+		ongletgestioncompte.addTab("Supprimer Compte", ongletsupprimercompte);
 		/*
 		//Création ongletaudition
 	    onglet4.setLayout(new BorderLayout());
@@ -273,7 +273,7 @@ public class Fenetre extends JFrame {
 				c.setCodePostal(jtcodePostalCl.getText());
 				c.setVille(jtvilleCl.getText());
 				c.setTelephone(jttelephoneCl.getText());
-				ic.creerClient();
+				ic.creerClient(c);
 				jtnomCl.setText("");
 				jtprenomCl.setText("");
 				jtcodePostalCl.setText("");
@@ -292,7 +292,7 @@ public class Fenetre extends JFrame {
 				c.setLogin(jtloginCo.getText());
 				c.setMdp(jtmdpCo.getText());
 				c.setEmail(jtemailCo.getText());
-				ig.creerConseiller();
+				ig.creerConseiller(c);
 				jtnomCo.setText("");
 				jtprenomCo.setText("");
 				jtloginCo.setText("");
@@ -311,7 +311,7 @@ public class Fenetre extends JFrame {
 				c.setDateOuverture(jtdateOuvertureCp.getText());
 				((CompteCourant) c).setDecouvert(Integer.parseInt(jtdecouvertCp.getText()));
 				((CompteEpargne) c).setTauxEpargne(Float.parseFloat(jttauxCp.getText()));
-				ic.creerClient();
+				ic.creerCompte(c);
 				jtnumCp.setText("");
 				jtsoldeCp.setText("");
 				jtdateOuvertureCp.setText("");
@@ -330,7 +330,7 @@ public class Fenetre extends JFrame {
 				c.setDateOuverture(jtdateOuvertureCp.getText());
 				((CompteCourant) c).setDecouvert(Integer.parseInt(jtdecouvertCp.getText()));
 				((CompteEpargne) c).setTauxEpargne(Float.parseFloat(jttauxCp.getText()));
-				ic.creerClient();
+				ic.modifierCompte(c);
 				jtnumCp.setText("");
 				jtsoldeCp.setText("");
 				jtdateOuvertureCp.setText("");
@@ -349,7 +349,7 @@ public class Fenetre extends JFrame {
 				c.setDateOuverture(jtdateOuvertureCp.getText());
 				((CompteCourant) c).setDecouvert(Integer.parseInt(jtdecouvertCp.getText()));
 				((CompteEpargne) c).setTauxEpargne(Float.parseFloat(jttauxCp.getText()));
-				ic.creerClient();
+				ic.lireCompte(c);
 				jtnumCp.setText("");
 				jtsoldeCp.setText("");
 				jtdateOuvertureCp.setText("");
@@ -364,7 +364,7 @@ public class Fenetre extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Compte c = new Compte();
 				c.setNumCompte(Integer.parseInt(jtnumCp.getText()));
-				ic.creerClient();
+				ic.supprimerCompte(c);
 				jtnumCp.setText("");
 				jtsoldeCp.setText("");
 				jtdateOuvertureCp.setText("");
