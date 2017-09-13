@@ -18,7 +18,7 @@ public class Lanceur {
 		
 		Compte c = new Compte();
 		c.setNumCompte(234234);
-		c.setDateOuverture(12/12/12);
+		c.setDateOuverture("12/12/12");
 		
 		/*Fenetre f = new Fenetre();
 		f.setVisible(true);*/

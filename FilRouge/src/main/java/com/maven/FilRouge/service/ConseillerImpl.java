@@ -75,8 +75,8 @@ public class ConseillerImpl implements IConseiller {
 	 * M�thode permettant � un conseiller de modifier les caract�ristiques d'un compte bancaire
 	 */
 	@Override
-	public void modifierCompte(Compte c) {
-		dao.modifierCompte(c);			
+	public void modifierCompte(int idCompte, float solde) {
+		dao.modifierCompte(idCompte, solde);			
 	}
 
 	/**
